@@ -34,8 +34,8 @@ class Student{
 
   public static void main(String[] args){
     Student s1 = new Student(101, "Nitya", 90, 89, 88);
-    s1.CalculateTotal();
-    s1.CalculatePercentage();
+    s1.displayDetails();
+    Student s2 = new Student(101, "Ansh Singh", 97, 79, 78);
     s1.displayDetails();
   }
 
