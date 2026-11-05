@@ -1,0 +1,66 @@
+
+class Book {
+    String title;
+    String author;
+    double price;
+
+    // Default Constructor
+    Book() {
+        title = "Unknown";
+        author = "Unknown";
+        price = 0;
+    }
+
+    // Parameterized Constructor
+    Book(String t, String a, double p) {
+        title = t;
+        author = a;
+        price = p;
+    }
+
+    // Copy Constructor
+    Book(Book obj) {
+        title = obj.title;
+        author = obj.author;
+        price = obj.price;
+    }
+
+    void display() {
+        System.out.println("Title: " + title);
+        System.out.println("Author: " + author);
+        System.out.println("Price: " + price);
+        System.out.println("----------------");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Book b1 = new Book();
+
+        Book b2 = new Book(
+            "Java Programming",
+            "James Gosling",
+            500
+        );
+
+        Book b3 = new Book(b2);
+
+        System.out.println("Default Constructor:");
+        b1.display();
+
+        System.out.println("Parameterized Constructor:");
+        b2.display();
+
+        System.out.println("Copy Constructor:");
+        b3.display();
+
+        b2.price = 600;
+
+        System.out.println("After modifying original object:");
+        b2.display();
+
+        System.out.println("Copied object remains unchanged:");
+        b3.display();
+    }
+}
