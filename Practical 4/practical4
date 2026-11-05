@@ -1,0 +1,49 @@
+
+class Calculator {
+
+    // Method Overloading
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+
+// Method Overriding
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Calculator cal = new Calculator();
+
+        System.out.println("Addition of 2 numbers: "
+                           + cal.add(10, 20));
+
+        System.out.println("Addition of 3 numbers: "
+                           + cal.add(10, 20, 30));
+
+        System.out.println("Addition of decimal numbers: "
+                           + cal.add(5.5, 4.5));
+
+        Animal obj = new Dog();
+        obj.sound();
+    }
+}
