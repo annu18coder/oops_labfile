@@ -1,1 +1,45 @@
 
+interface Printable {
+    void print();
+}
+
+interface Scannable {
+    void scan();
+}
+
+class Machine {
+    void powerOn() {
+        System.out.println("Machine is switched ON");
+    }
+}
+
+class Printer extends Machine {
+    void printerInfo() {
+        System.out.println("This is a Printer");
+    }
+}
+
+class AllInOnePrinter extends Printer
+        implements Printable, Scannable {
+
+    public void print() {
+        System.out.println("Printing document...");
+    }
+
+    public void scan() {
+        System.out.println("Scanning document...");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        AllInOnePrinter obj = new AllInOnePrinter();
+
+        obj.powerOn();
+        obj.printerInfo();
+        obj.print();
+        obj.scan();
+    }
+}
+
