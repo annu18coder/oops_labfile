@@ -1,0 +1,33 @@
+
+class Demo {
+
+    Demo() {
+        System.out.println("Object is created");
+    }
+
+    void display() {
+        System.out.println("Object is being used");
+    }
+
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Demo obj1 = new Demo();
+
+        obj1.display();
+
+        // Removing reference
+        obj1 = null;
+
+        System.out.println(
+            "Object is now eligible for Garbage Collection"
+        );
+
+        // Requesting Garbage Collection
+        System.gc();
+
+        System.out.println("End of main method");
+    }
+}
